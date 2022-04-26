@@ -1,44 +1,7 @@
-# 🧰 Simple TypeScript Starter | 2021
+Forked this repo from a public one that had basic scaffolding for a typescript project
 
-> We talk about a lot of **advanced Node.js and TypeScript** concepts on [the blog](https://khalilstemmler.com), particularly focused around Domain-Driven Design and large-scale enterprise application patterns. However, I received a few emails from readers that were interested in seeing what a basic TypeScript starter project looks like. So I've put together just that.
+Index.ts file is where tha magic happens, can set up to run many different api calls as you see fit
 
-### Features
-
-- Minimal
-- TypeScript v4
-- Testing with Jest
-- Linting with Eslint and Prettier
-- Pre-commit hooks with Husky
-- VS Code debugger scripts
-- Local development with Nodemon
-
-### Scripts
-
-#### `npm run start:dev`
-
-Starts the application in development using `nodemon` and `ts-node` to do hot reloading.
-
-#### `npm run start`
-
-Starts the app in production by first building the project with `npm run build`, and then executing the compiled JavaScript at `build/index.js`.
-
-#### `npm run build`
-
-Builds the app at `build`, cleaning the folder first.
-
-#### `npm run test`
-
-Runs the `jest` tests once.
-
-#### `npm run test:dev`
-
-Run the `jest` tests in watch mode, waiting for file changes.
-
-#### `npm run prettier-format`
-
-Format your code.
-
-#### `npm run prettier-watch`
-
-Format your code in watch mode, waiting for file changes.
-
+Basic info:
+Axios is the npm package I used for making my api calls, can set up config like some of the variables I have set in the .ts file
+Headers, authentication, etc
