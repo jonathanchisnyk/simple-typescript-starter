@@ -19,6 +19,38 @@ var configGet = {
     data: { 'targetOrgId': 'af9a29bc-cbd8-400d-8583-e76ff246ffa7'}
   };
 
+  var configIssues = {
+    method: 'post',
+    url: 'https://snyk.io/api/v1/org/9d0a37dd-b1a6-4355-be33-a51f3dfa4093/project/',
+    headers: { 'Authorization': '6545af0e-b577-42c1-895b-c3b8dabf9594'},
+    data: {
+        "includeDescription": false,
+        "includeIntroducedThrough": false,
+        "filters": {
+          "severities": [
+            "critical",
+            "high"
+          ],
+          "exploitMaturity": [
+            "mature",
+            "proof-of-concept"
+          ],
+          "types": [
+            "vuln",
+            "license"
+          ],
+          "ignored": false,
+          "patched": false,
+          "priority": {
+            "score": {
+              "min": 0,
+              "max": 1000
+            }
+          }
+        }
+      }
+  };
+
         axios(configGet) 
             .then(function (response) {
                 const projects = response.data.projects;
@@ -63,6 +95,23 @@ var configGet = {
                             console.log("move error");
                         });
                         configMove.url = tempUrl;
+                    }
+                    else {
+                        var issueUrl = configIssues.url;
+                        configIssues.url = configIssues.url + project.id + "/aggregated-issues";
+                        axios(configIssues)
+                            .then(function(response){
+                                
+                                var issues = response.data.issues;
+                                issues.forEach((issue:any) => {
+                                    console.log(issue);
+                                });
+                            })
+                            .catch(function(error){
+                                console.log(error);
+                                console.log("issue error");
+                            });
+                            configIssues.url = issueUrl;
                     }
                 });
                 //console.log(projects);
