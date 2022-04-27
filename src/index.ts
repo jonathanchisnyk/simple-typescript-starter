@@ -2,27 +2,27 @@ import axios from 'axios'
 
 var configGet = {
     method: 'get',
-    url: 'https://snyk.io/api/v1/org/9d0a37dd-b1a6-4355-be33-a51f3dfa4093/projects',
-    headers: { 'Authorization': '6545af0e-b577-42c1-895b-c3b8dabf9594'}
+    url: 'https://snyk.io/api/v1/org/'orgid'/projects',
+    headers: { 'Authorization': enter your apikey}
   };
 
   var configDelete = {
     method: 'delete',
-    url: 'https://snyk.io/api/v1/org/9d0a37dd-b1a6-4355-be33-a51f3dfa4093/project/',
-    headers: { 'Authorization': '6545af0e-b577-42c1-895b-c3b8dabf9594'}
+    url: 'https://snyk.io/api/v1/org/enterorgidhere/project/',
+    headers: { 'Authorization': enter your apikey}
   };
 
   var configMove = {
     method: 'put',
-    url: 'https://snyk.io/api/v1/org/9d0a37dd-b1a6-4355-be33-a51f3dfa4093/project/',
-    headers: { 'Authorization': '6545af0e-b577-42c1-895b-c3b8dabf9594'},
-    data: { 'targetOrgId': 'af9a29bc-cbd8-400d-8583-e76ff246ffa7'}
+    url: 'https://snyk.io/api/v1/org/enterorgidhere/project/',
+    headers: { 'Authorization': enter your apikey},
+    data: { 'targetOrgId': enter target org}
   };
 
   var configIssues = {
     method: 'post',
-    url: 'https://snyk.io/api/v1/org/9d0a37dd-b1a6-4355-be33-a51f3dfa4093/project/',
-    headers: { 'Authorization': '6545af0e-b577-42c1-895b-c3b8dabf9594'},
+    url: 'https://snyk.io/api/v1/org/enterorgidhere/project/',
+    headers: { 'Authorization': enter your apikey},
     data: {
         "includeDescription": false,
         "includeIntroducedThrough": false,
